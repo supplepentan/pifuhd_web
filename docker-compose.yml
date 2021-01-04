@@ -1,0 +1,11 @@
+version: '3'
+services:
+    web:
+        image: cuda101_nn7_2
+        container_name: web_pifuhd
+        command: python3 main.py
+        volumes:
+            - ./app:/root
+        restart: always
+        ports:
+            - 8001:8001

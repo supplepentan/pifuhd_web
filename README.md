@@ -1,0 +1,1 @@
+docker run -it -v C:\Users\satis\projects\docker\web_pifuhd_cuda101_nn7\app:/root/flask -p 8001:8001 --rm cuda101_nn7_2 /bin/bash

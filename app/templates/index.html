@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PIFuHD</title>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+    <!-- BootstrapのCSSを参照 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- a-flameを参照 -->
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row alert-danger">
+            <div class="col-12 text-center">
+                <h1>PIFuHD</h1>
+            </div>
+        </div>
+        <div class="row alert-warning">
+            <div class="col-5"></div>
+            <div class="col-auto">
+                <form method=post enctype=multipart/form-data>
+                    <div class="form-row">
+                        <input type=file class="form-control-file" name=file>
+                        <input type=submit class="btn btn-danger" value="実行">
+                    </div>
+                </form>
+            </div>
+            <div class="col-5"></div>
+        </div>
+
+        {%if img%}
+        <div class="row alert-danger">
+            <div class="col-12 text-center">
+                <a-assets>
+                    <a-asset-item id="crate-obj" src="{{url_for("static", filename="pifuhd_final/recon/result_test_512.obj")}}"></a-asset-item>
+                    <a-asset-item id="crate-mtl" src="#kinoko.mtl"></a-asset-item>
+                </a-assets>
+                <a-scene>
+                    <a-obj-model position="0 0.5 -5" src="#crate-obj" mtl="#crate-mtl"></a-obj-model>
+                    <a-sky color="#ECECEC"></a-sky>
+                </a-scene>
+            </div>
+        </div>
+        {%endif%}
+
+        <div class="row alert-warning">
+            <div class="col-12 text-center">p('ω')q</div>
+        </div>
+
+
+
+    </div>
+
+    <div id="app"></div>
+    <script>
+        console.log(Vue.version)
+        console.log("ぷっぷっぷ")
+    </script>
+
+    <!-- BootstrapのJSを参照 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
