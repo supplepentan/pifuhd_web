@@ -30,18 +30,24 @@
             </div>
             <div class="col-5"></div>
         </div>
+        
+
+
+
+
 
         {%if img%}
         <div class="row alert-danger">
             <div class="col-12 text-center">
                 <a-assets>
                     <a-asset-item id="crate-obj" src="{{url_for("static", filename="pifuhd_final/recon/result_test_512.obj")}}"></a-asset-item>
-                    <a-asset-item id="crate-mtl" src="#kinoko.mtl"></a-asset-item>
+                    <a-asset-item id="crate-mtl" src="{{url_for("static", filename="pifuhd_final/recon/result_test_512.mtl")}}"></a-asset-item>
                 </a-assets>
                 <a-scene>
-                    <a-obj-model position="0 0.5 -5" src="#crate-obj" mtl="#crate-mtl"></a-obj-model>
-                    <a-sky color="#ECECEC"></a-sky>
+                    <a-obj-model position="0 1.5 -2" animation="property: rotation; from: 0 0 0; to: 0 -360 0; dur: 3000; easing: linear; loop: true" src="#crate-obj" mtl="#crate-mtl"></a-obj-model>
+                    <a-sky color="#030303"></a-sky>
                 </a-scene>
+
             </div>
         </div>
         {%endif%}
